@@ -33,7 +33,7 @@ cursor.execute("CREATE TABLE IF NOT EXISTS students(ogrencino INT, isim TEXT, an
 
                                     # VERİ ÇEKME #
 
-chose = int(input("işlem seçin: \n1. Numaraya Göre Veri Al \n2. İsme Göre Veri Al \n3. Yaşa Göre Veri Al \n4. Telefon Numarasına Göre Veri Al \n5. İptal \nİşlem Seçin:"))
+chose = int(input("işlem seçin: \n1. Numaraya Göre Veri Al \n2. İsme Göre Veri Al \n3. Yaşa Göre Veri Al \n4. İptal \nİşlem Seçin:"))
 
 if chose == 1:
     number = int(input("Numarayı Girin (1-20): "))
@@ -56,15 +56,8 @@ elif chose == 3:
     for data in cursor.fetchall():
          print(f"( numara: {data[0]}, isim soyisim: {data[1]}, anne adı:{data[2]}, baba adı: {data[3]}, doğum tarihi: {data[4]}, cinsiyet: {data[5]}, adres: {data[6]}, telefon: {data[7]}, email: {data[8]} )")
 
-elif chose == 4: 
-    telephone = int(input("Telefon numarası girin: "))
-    
-    cursor.execute(f"SELECT * from students WHERE telefon == {telephone}")
-    for data in cursor.fetchall():
-         print(f"( numara: {data[0]}, isim soyisim: {data[1]}, anne adı:{data[2]}, baba adı: {data[3]}, doğum tarihi: {data[4]}, cinsiyet: {data[5]}, adres: {data[6]}, telefon: {data[7]}, email: {data[8]} )")
 
-
-elif(chose) == 5:
+elif(chose) == 4:
     print("İşlem İptal Edildi")
 
 else:
